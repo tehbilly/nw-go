@@ -14,11 +14,12 @@ import (
 var ()
 
 func main() {
-	fmt.Println("All systems online.")
+	fmt.Println("Open, I am!")
+	ShowWindow()
 
-	rpcTest := new(TestServer)
 	server := rpc.NewServer()
-	server.RegisterName("Test", rpcTest)
+	server.RegisterName("Test", new(TestServer))
+	server.RegisterName("Window", new(NWJSWindowRPCServer))
 
 	rwc := &StdRWC{
 		in:  os.Stdin,
@@ -62,6 +63,6 @@ func (s *TestServer) Echo(args *TestArgs, resp *TestResp) error {
 	if args.Data == "" {
 		return errors.New("I won't echo an empty string!")
 	}
-	resp.Data = fmt.Sprintf("Echoing: %s", args.Data)
+	resp.Data = fmt.Sprintf(">> %s", args.Data)
 	return nil
 }

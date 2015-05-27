@@ -1,8 +1,11 @@
 {
   "name": "nw-go",
-  "node-main": "app.js",
   "main": "index.html",
+  "node-main": "app-node.js",
   "window": {
-    "icon": "golang_16x16.png"
+    "icon": "golang_16x16.png",
+    "toolbar": true,
+    "width": 900,
+    "height": 600
   }
 }
