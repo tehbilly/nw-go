@@ -1,5 +1,8 @@
 {
   "name": "nw-go",
   "node-main": "app.js",
-  "main": "index.html"
+  "main": "index.html",
+  "window": {
+    "icon": "golang_16x16.png"
+  }
 }
