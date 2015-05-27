@@ -1,0 +1,5 @@
+{
+  "name": "nw-go",
+  "node-main": "app.js",
+  "main": "index.html"
+}

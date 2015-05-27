@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <title>nw.js + go</title>
+  </head>
+  <body>
+    <h3>Well aren't we fancy?</h3>
+    <input id="send-to-goapp"> <button onclick="sendSomething()">Send</button>
+    <pre id="go-stdout"></pre>
+  </body>
+  <!-- Let's test launching a child process -->
+  <script>
+    var app = process.mainModule.exports;
+    var sendSomething = function() {
+      app.echo(document.getElementById('send-to-goapp').value);
+      document.getElementById('send-to-goapp').value = '';
+    };
+  </script>
+</html>
